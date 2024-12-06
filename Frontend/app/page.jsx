@@ -1,9 +1,17 @@
+"use client"
+
 import Header from "@/components/Header";
+import { useState } from "react";
+import Link from "next/link";
 import Image from "next/image";
 import img from '@/images/Paul.png'
 import { ArrowRight } from 'lucide-react'; 
+import VoteModal from '@/components/VoteModal'
+import { Button } from "@/components/ui/button";
 
 export default function Home() {
+
+
   return (
     <main className="min-h-screen overflow-x-hidden">
     <Header />
@@ -23,7 +31,14 @@ export default function Home() {
           <h1 className="text-white text-4xl mb-8 leading-tight font-semibold">
             Perform Your full duties<br />as a citizen of Cameroon by placing a vote
           </h1>
-          
+          <Link href='/vote'>
+            <Button 
+              className="bg-primary text-white hover:bg-white hover:text-primary w-fit px-8"
+            >
+              Vote Now
+              <ArrowRight className="ml-2 h-4 w-4" />
+            </Button>
+          </Link>
         </div>
 
         {/* Project preview card */}
@@ -48,6 +63,8 @@ export default function Home() {
         
       </div>
     </div>
+
+
   </main>
   )
 }
